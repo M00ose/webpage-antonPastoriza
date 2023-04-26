@@ -1,15 +1,16 @@
-import React from 'react'
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-import { Footer, Navbar } from '../components';
+import { Footer, Navbar, Socials } from "../components";
 
 const index = () => {
   return (
     <main>
-      <Navbar/>
-      <Footer/>
+      <Navbar />
+      <Socials />
+      <Footer />
     </main>
-  )
-}
+  );
+};
 
-export default index
+export default index;
