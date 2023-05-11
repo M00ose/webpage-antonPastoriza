@@ -5,78 +5,20 @@ require("dotenv").config();
 const graphqlAPI = process.env.GRAPHQL_API_KEY;
 const graphcms = new GraphQLClient(graphqlAPI);
 
-export const getPosts = async () => {
+export const fetchArtwork = async (slug) => {
   const query = gql`
-    {
-      posts {
-        id
-        title
-        datePublished
-        slug
-        content {
-          html
-        }
-      }
-    }
-  `;
-
-  return await graphcms.request(query);
-};
-
-export const getPost = async (slug) => {
-  const query = gql`
-    query Post($slug: String!) {
-      post(where: { slug: $slug }) {
-        id
+    query artworks(where: { slug: $slug }) {
         title
         slug
-        datePublished
-        content {
-          html
-        }
-      }
-    }
-  `;
-
-  return await graphcms.request(query, { slug });
-};
-
-export const getSlugList = async () => {
-  const query = gql`
-    {
-      posts {
-        slug
-      }
-    }
-  `;
-
-  return await graphcms.request(query);
-};
-
-export const getGallery = async () => {
-  const query = gql`
-    {
- 
-    }
-  `;
-
-  return await graphcms.request(query);
-};
-export const getPiece = async (slug) => {
-  const query = gql`
-    query Gallery($slug: String!) {
-      post(where: { slug: $slug }) {
-        name
-        origin
-        coverPhoto {
+        description
+        dimensions
+        media
+        price
+        year
+        image {
           url
-          height
           width
-        }
-        slug
-        datePublished
-        description {
-          html
+          height
         }
       }
     }
@@ -85,11 +27,18 @@ export const getPiece = async (slug) => {
   return await graphcms.request(query, { slug });
 };
 
-export const getEntrepreneurSlugList = async () => {
+export const fetchArtworks = async () => {
   const query = gql`
     {
-      entrepreneurs {
+      artworks {
         slug
+        title
+        year
+        image {
+          url
+          width
+          height
+        }
       }
     }
   `;
