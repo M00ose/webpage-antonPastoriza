@@ -1,7 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
 
-require("dotenv").config();
-
 const graphqlAPI = process.env.GRAPHQL_API_KEY;
 const graphcms = new GraphQLClient(graphqlAPI);
 
