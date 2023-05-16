@@ -1,8 +1,13 @@
 import Image from "next/image";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 export default function ArtworkCard(props) {
   return (
-    <div className="flex flex-row items-start justify-center gap-8 ">
+    <div
+      className={`${inter.className} flex flex-row items-start justify-center gap-8 `}
+    >
       <div className="max-h-lg max-w-lg">
         <Image
           key={props.data.title}
