@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Rock_Salt } from "next/font/google";
+import { useEffect } from "react";
 
 import {
   containerVariants,
@@ -9,16 +10,31 @@ import {
 
 const rockSalt = Rock_Salt({ subsets: ["latin"], weight: "400" });
 
-const Navbar = () => {
+export function Navbar() {
   const firstName = "ANTONIO";
   const lastName = "PASTORIZA";
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("after");
+  }, [controls]);
+
+  const handleAnimationComplete = () => {
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      navbar.classList.remove("h-screen");
+      navbar.classList.add("h-fit");
+    }
+  };
 
   return (
     <motion.div
+      id="navbar"
       variants={positionNameVariants}
       initial="before"
-      animate="after"
-      className={`${rockSalt.className} flex justify-center h-screen max-w-screen`}
+      animate={controls}
+      onAnimationComplete={handleAnimationComplete}
+      className={`${rockSalt.className} flex justify-center h-screen w-screen bg-black text-white transition-all ease-in duration-100`}
       aria-label="logo"
     >
       <motion.div variants={containerVariants} className="p-2 md:p-4">
@@ -41,6 +57,4 @@ const Navbar = () => {
       </motion.div>
     </motion.div>
   );
-};
-
-export default Navbar;
+}
