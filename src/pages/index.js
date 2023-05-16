@@ -2,12 +2,9 @@ import React, { useState, useLayoutEffect, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 
 import { ArtworkCard, Footer, Modal, Navbar, Socials } from "./components";
 import { fetchArtworks } from "@/services";
-
-const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 export async function getStaticProps() {
   try {
@@ -51,9 +48,10 @@ const Index = ({ artworks }) => {
 
   if (!artworks) {
     return <div>Loading...</div>;
+    //TODO: Add loading effect
   }
   return (
-    <main className="overflow-hidden">
+    <main className="h-screen w-screen overflow-hidden">
       <Navbar />
       <Socials />
 
@@ -63,7 +61,7 @@ const Index = ({ artworks }) => {
         </Modal>
       )}
 
-      <div className="h-screen w-screen flex flex-row p-20 bg-black">
+      <div className="h-full w-full flex flex-row p-20 bg-black">
         {artworks.map((artwork) => (
           <Link
             key={artwork.title}
