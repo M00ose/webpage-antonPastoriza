@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Dialog } from "@headlessui/react";
 
-export function Modal({ onClose = () => {}, children }) {
+export default function Modal({ onClose = () => {}, children }) {
   let overlayRef = useRef();
 
   return (
