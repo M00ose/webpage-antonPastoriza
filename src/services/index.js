@@ -31,6 +31,9 @@ export const fetchArtworks = async () => {
       artworks {
         slug
         title
+        description
+        dimensions
+        media
         year
         image {
           url
