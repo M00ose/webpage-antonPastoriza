@@ -20,7 +20,7 @@ const socials = [
     icon: <CiLinkedin />,
   },
 ];
-const Socials = () => {
+export default function Socials() {
   return (
     <div className="absolute top-10 right-5">
       <div className="flex flex-col h-fit">
@@ -37,6 +37,4 @@ const Socials = () => {
       </div>
     </div>
   );
-};
-
-export default Socials;
+}

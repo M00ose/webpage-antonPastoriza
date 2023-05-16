@@ -10,7 +10,7 @@ import {
 
 const rockSalt = Rock_Salt({ subsets: ["latin"], weight: "400" });
 
-export function Navbar() {
+export default function Navbar() {
   const firstName = "ANTONIO";
   const lastName = "PASTORIZA";
   const controls = useAnimation();

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function ArtworkCard(props) {
+export default function ArtworkCard(props) {
   return (
     <div className="flex flex-row items-start justify-center gap-8 ">
       <div className="max-h-lg max-w-lg">
