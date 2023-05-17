@@ -51,47 +51,47 @@ const Index = ({ artworks }) => {
     //TODO: Add loading effect
   }
   return (
-    <main className="h-screen w-screen overflow-hidden">
-      <Navbar />
-      <Socials />
-
+    <main className="h-screen w-screen bg-black overflow-hidden">
       {router.query.image && (
         <Modal onClose={() => router.push("")}>
           <ArtworkCard image={router.query.image} data={active} />
         </Modal>
       )}
-
-      <div className="h-full w-full flex flex-row p-20 bg-black">
-        {artworks.map((artwork) => (
-          <Link
-            key={artwork.title}
-            href={`/?image=${artwork.image.url}`}
-            className="h-[36rem]"
-          >
-            <Image
-              src={artwork.image.url}
-              alt={artwork.title}
-              height={500}
-              width={500}
-              priority={priority}
-              className={`object-cover h-full max-w-${imageWidth}vw hover:scale-110 hover:drop-shadow-lg transition-all`}
-              onClick={() => {
-                setActive({
-                  dimensions: artwork.dimensions,
-                  description: artwork.description,
-                  height: artwork.image.height,
-                  media: artwork.media,
-                  src: artwork.image.url,
-                  title: artwork.title,
-                  width: artwork.image.width,
-                  year: artwork.year,
-                });
-              }}
-            />
-          </Link>
-        ))}
+      <div className="flex flex-col items-center justify-between h-full">
+        <Navbar />
+        <Socials />
+        <div className="flex-1 flex flex-row items-center p-20">
+          {artworks.map((artwork) => (
+            <Link
+              key={artwork.title}
+              href={`/?image=${artwork.image.url}`}
+              className="h-2/3"
+            >
+              <Image
+                src={artwork.image.url}
+                alt={artwork.title}
+                height={500}
+                width={500}
+                priority={priority}
+                className={`object-cover h-full max-w-${imageWidth}vw hover:scale-110 hover:drop-shadow-lg transition-all`}
+                onClick={() => {
+                  setActive({
+                    dimensions: artwork.dimensions,
+                    description: artwork.description,
+                    height: artwork.image.height,
+                    media: artwork.media,
+                    src: artwork.image.url,
+                    title: artwork.title,
+                    width: artwork.image.width,
+                    year: artwork.year,
+                  });
+                }}
+              />
+            </Link>
+          ))}
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </main>
   );
 };
