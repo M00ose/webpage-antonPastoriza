@@ -34,7 +34,7 @@ export default function Navbar() {
       initial="before"
       animate={controls}
       onAnimationComplete={handleAnimationComplete}
-      className={`${rockSalt.className} flex justify-center h-screen w-screen bg-black text-white transition-all ease-in duration-100`}
+      className={`${rockSalt.className} absolute right-50 top-0 flex justify-center h-screen w-screen bg-black text-white transition-all ease-in duration-100`}
       aria-label="logo"
     >
       <motion.div variants={containerVariants} className="p-2 md:p-4">
