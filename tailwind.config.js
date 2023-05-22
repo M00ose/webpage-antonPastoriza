@@ -18,6 +18,9 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    boxShadow: {
+      "3xl": "0 20px 60px 10px #1a202c",
+    },
   },
   plugins: [],
 };
