@@ -51,7 +51,7 @@ const Index = ({ artworks }) => {
     //TODO: Add loading effect
   }
   return (
-    <main className="h-screen w-screen bg-black overflow-hidden">
+    <main className="h-screen w-screen bg-hero-pattern bg-no-repeat bg-cover overflow-hidden">
       {router.query.image && (
         <Modal onClose={() => router.push("")}>
           <ArtworkCard image={router.query.image} data={active} />
@@ -60,12 +60,12 @@ const Index = ({ artworks }) => {
       <div className="flex flex-col items-center justify-between h-full">
         <Navbar />
         <Socials />
-        <div className="flex-1 flex flex-row items-center p-20">
+        <div className="flex-1 flex flex-row items-center m-20 max-h-[60%] shadow-3xl">
           {artworks.map((artwork) => (
             <Link
               key={artwork.title}
               href={`/?image=${artwork.image.url}`}
-              className="h-2/3"
+              className="h-full"
             >
               <Image
                 src={artwork.image.url}
