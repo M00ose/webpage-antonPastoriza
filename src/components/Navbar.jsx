@@ -6,7 +6,7 @@ import {
   containerVariants,
   animateNameVariants,
   positionNameVariants,
-} from "../../utils/motion";
+} from "../utils/motion";
 
 const rockSalt = Rock_Salt({ subsets: ["latin"], weight: "400" });
 

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArtworkCard, Footer, Modal, Navbar, Socials } from "./components";
+import { ArtworkCard, Footer, Modal, Navbar, Socials } from "../components";
 import { fetchArtworks } from "@/services";
 
 export async function getStaticProps() {
