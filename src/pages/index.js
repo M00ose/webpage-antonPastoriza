@@ -27,7 +27,7 @@ export async function getStaticProps() {
   }
 }
 
-export default const Index = ({ artworks }) => {
+export default function Index({ artworks }) {
   //Set up the router for the artwork modals
   const [active, setActive] = useState("");
   let router = useRouter();
@@ -94,6 +94,4 @@ export default const Index = ({ artworks }) => {
       </div>
     </main>
   );
-};
-
-export default Index;
+}
