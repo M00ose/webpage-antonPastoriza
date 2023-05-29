@@ -6,11 +6,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "hero-pattern": "url('/bg.avif')",
-      },
-    },
+    extend: {},
     screens: {
       sm: "640px",
       md: "768px",
