@@ -3,7 +3,14 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArtworkCard, Footer, Modal, Navbar, Socials } from "../components";
+import {
+  AboutModal,
+  ArtworkCard,
+  Footer,
+  Modal,
+  Navbar,
+  Socials,
+} from "../components";
 import { fetchArtworks } from "@/services";
 
 export async function getStaticProps() {
@@ -51,13 +58,14 @@ export default function Index({ artworks }) {
     //TODO: Add loading effect
   }
   return (
-    <main className="fixed h-screen w-screen bg-black bg-no-repeat bg-cover overflow-hidden">
+    <main className="relative h-screen w-screen bg-black bg-no-repeat bg-cover overflow-hidden">
       {router.query.image && (
         <Modal onClose={() => router.push("")}>
           <ArtworkCard image={router.query.image} data={active} />
         </Modal>
       )}
       <div className="flex flex-col h-full z-30">
+        <AboutModal />
         <Navbar />
         <Socials />
         <div className="flex-1 flex items-center justify-center z-10">
