@@ -38,8 +38,8 @@ export default function Navbar() {
       className={`${rockSalt.className} absolute right-50 top-0 flex justify-center h-screen w-screen text-white bg-black transition-all ease-in duration-100 z-30`}
       aria-label="logo"
     >
-      <motion.div variants={containerVariants} className="p-2 md:p-4">
-        <div className="text-center">
+      <motion.div variants={containerVariants} className="fixed p-2 md:p-4">
+        <div className="text-center hover:cursor-none">
           <div>
             {firstName.split("").map((letter, index) => (
               <motion.span key={index} variants={animateNameVariants}>
