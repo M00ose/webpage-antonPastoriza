@@ -61,7 +61,7 @@ export default function Index({ artworks }) {
         <Navbar />
         <Socials />
         <div className="flex-1 flex items-center justify-center z-10">
-          <div className="flex flex-row items-center justify-center h-[50%] w-full mx-20 shadow-3xl">
+          <div className="flex flex-row items-center justify-center h-[50%] w-full mx-20 lg:mx-60 shadow-3xl">
             {artworks.map((artwork) => (
               <Link
                 key={artwork.title}
@@ -94,7 +94,7 @@ export default function Index({ artworks }) {
         </div>
         <Footer />
       </div>
-      <div className="absolute top-0 right-10 h-[800px] w-[800px] rounded-full bg-gradient-to-r from-white via-white to-red-700 blur-3xl opacity-30 z-0"></div>
+      <div className="absolute top-0 right-10 h-[50vw] w-[50vw] rounded-full bg-gradient-to-r from-white via-white to-red-700 blur-3xl opacity-30 z-0"></div>
       <div className="absolute top-0 left-30 h-[600px] w-[600px] rounded-full bg-blue-300 blur-3xl opacity-30 z-0"></div>
       <div className="absolute bottom-0 right-0 translate-x-20 h-[400px] w-[400px] rounded-full bg-red-500 blur-3xl opacity-20 z-0"></div>
     </main>
