@@ -29,7 +29,7 @@ export default function Socials() {
             href={social.url}
             key={social.label}
             aria-label={social.label}
-            className="text-2xl text-white hover:scale-150 hover:-translate-x-1 hover:my-2 transition-all"
+            className="text-2xl text-white hover:scale-150 hover:-translate-x-1 hover:my-2 transition-all z-30"
           >
             {social.icon}
           </Link>
