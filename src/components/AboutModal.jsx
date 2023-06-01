@@ -16,7 +16,6 @@ export default function AboutModal() {
       if (
         x >= windowSize.width * 0.4 &&
         x <= windowSize.width * 0.6 &&
-        y >= 0 &&
         y <= windowSize.height * 0.1
       ) {
         setModal(true);
@@ -38,14 +37,14 @@ export default function AboutModal() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [windowSize]);
 
   return (
     <div className={`fixed z-50`}>
       {Modal && (
         <motion.div
-          animate={{ x: position.x, y: position.y }}
-          className="h-24 w-24 bg-white rounded-full flex items-center justify-center text-sm leading-3"
+          animate={{ x: position.x - 20, y: position.y - 20 }}
+          className="h-24 w-24 bg-white rounded-full flex items-center justify-center text-sm leading-3 hover:cursor-none"
         >
           About <br />
           Anton &rarr;
