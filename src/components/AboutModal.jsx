@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutModal() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -40,7 +41,7 @@ export default function AboutModal() {
   }, [windowSize.width, windowSize.height]);
 
   return (
-    <div className={`fixed z-50`}>
+    <Link href="about" className={`fixed z-50`}>
       {Modal && (
         <motion.div
           animate={{ x: position.x - 20, y: position.y - 20 }}
@@ -50,6 +51,6 @@ export default function AboutModal() {
           Anton &rarr;
         </motion.div>
       )}
-    </div>
+    </Link>
   );
 }
