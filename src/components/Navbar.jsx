@@ -39,7 +39,7 @@ export default function Navbar() {
       aria-label="logo"
     >
       <motion.div variants={containerVariants} className="fixed p-2 md:p-4">
-        <div className="text-center hover:cursor-none">
+        <div className="name text-center hover:cursor-none">
           <div>
             {firstName.split("").map((letter, index) => (
               <motion.span key={index} variants={animateNameVariants}>

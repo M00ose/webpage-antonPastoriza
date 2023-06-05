@@ -37,7 +37,7 @@ export default function AboutModal() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
     };
-  }, [windowSize]);
+  }, [windowSize.width, windowSize.height]);
 
   return (
     <div className={`fixed z-50`}>
