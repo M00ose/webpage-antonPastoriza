@@ -31,7 +31,7 @@ export async function getStaticProps() {
   }
 }
 
-const About = ({ artworks }) => {
+export default function About({ artworks }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -98,6 +98,4 @@ const About = ({ artworks }) => {
       <Footer />
     </div>
   );
-};
-
-export default About;
+}
