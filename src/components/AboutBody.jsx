@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutBody(props) {
   return (
-    <>
+    <section className="flex flex-row gap-8">
       <div className="w-[40%]">
         <Image
           key={props.data[props.index].title}
@@ -39,6 +39,6 @@ export default function AboutBody(props) {
           </p>
         </div>
       </div>
-    </>
+    </section>
   );
 }
