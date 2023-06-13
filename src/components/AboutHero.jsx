@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative h-[80vh] w-full flex flex-row gap-8">
+    <section className="relative h-full w-full flex flex-row gap-8">
       <Image
         src="/profile.jpg"
         alt="Antonio Pastoriza"
