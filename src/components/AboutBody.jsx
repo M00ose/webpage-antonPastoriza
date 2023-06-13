@@ -1,20 +1,10 @@
 import React from "react";
-import Image from "next/image";
 
 export default function AboutBody(props) {
   return (
-    <section className="flex flex-row gap-8 no-scrollbar">
-      <div className="w-[40%]">
-        <Image
-          key={props.data[props.index].title}
-          src={props.data[props.index].image.url}
-          alt={props.data[props.index].title}
-          height={200}
-          width={200}
-        />
-      </div>
-      <div className="h-full w-auto flex flex-col lg:flex-row gap-24 lg:gap-24">
-        <div className="lg:w-[35%]">
+    <section className="">
+      <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col">
           <h2 className="mb-8 text-5xl leading-relaxed">
             PARALLEL DISCONNECTIONS
           </h2>
@@ -25,7 +15,7 @@ export default function AboutBody(props) {
             one&apos;s own feelings and interpretations.
           </p>
         </div>
-        <div className="lg:w-[35%]">
+        <div className="flex flex-col">
           <h2 className="mb-8 text-5xl leading-relaxed">
             THERAPEUTIC EXPRESSIONS
           </h2>
