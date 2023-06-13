@@ -4,7 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import { Rock_Salt, Inter } from "next/font/google";
 import Image from "next/image";
 
-import { AboutBody, AboutHero, Footer, StaticNavbar } from "../components";
+import {
+  AboutBody,
+  AboutHero,
+  AboutImage,
+  Footer,
+  StaticNavbar,
+} from "../components";
 
 const rockSalt = Rock_Salt({ subsets: ["latin"], weight: "400" });
 const inter = Inter({ subsets: ["latin"], weight: "400" });
@@ -49,10 +55,13 @@ export default function About({ artworks }) {
     <div className="bg-black min-h-screen min-w-screen overflow-hidden overflow-y-scroll flex items-center justify-center no-scrollbar">
       <StaticNavbar font={rockSalt} />
       <motion.div
-        className={`${rockSalt.className} flex flex-col items-center justify-center gap-12 pt-24 px-8 min-h-[92vh] min-w-[94vw] -translate-y-2 border-neutral-700 border-[1px] rounded-lg text-white`}
+        className={`${rockSalt.className} flex flex-col items-center justify-center gap-12 pt-24 px-8 min-h-[92vh] w-[94vw] -translate-y-2 border-neutral-700 border-[1px] rounded-lg text-white`}
       >
         <AboutHero />
-        {/* <AboutBody index={index} data={artworks} font={inter} /> */}
+        <div>
+          <AboutImage index={index} data={artworks} />
+          <AboutBody font={inter} />
+        </div>
       </motion.div>
       <Footer />
     </div>
