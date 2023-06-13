@@ -2,10 +2,10 @@ import React from "react";
 
 export default function AboutBody(props) {
   return (
-    <section className="">
+    <>
       <div className="flex flex-col lg:flex-row gap-16">
-        <div className="flex flex-col">
-          <h2 className="mb-8 text-5xl leading-relaxed">
+        <div className="flex flex-col md:max-w-[30vw] lg:max-w-[40vw]">
+          <h2 className="mb-8 text-2xl sm:text-3xl xl:text-4xl leading-relaxed sm:leading-relaxed xl:leading-relaxed">
             PARALLEL DISCONNECTIONS
           </h2>
           <p className={`flex-1 ${props.font.className} text-sm`}>
@@ -15,8 +15,8 @@ export default function AboutBody(props) {
             one&apos;s own feelings and interpretations.
           </p>
         </div>
-        <div className="flex flex-col">
-          <h2 className="mb-8 text-5xl leading-relaxed">
+        <div className="flex flex-col lg:pt-24 md:max-w-[30vw] lg:max-w-[40vw]">
+          <h2 className="mb-8 text-2xl sm:text-3xl xl:text-4xl leading-relaxed sm:leading-relaxed xl:leading-relaxed">
             THERAPEUTIC EXPRESSIONS
           </h2>
           <p className={`flex-1 ${props.font.className} text-sm`}>
@@ -29,6 +29,6 @@ export default function AboutBody(props) {
           </p>
         </div>
       </div>
-    </section>
+    </>
   );
 }
