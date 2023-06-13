@@ -55,13 +55,13 @@ export default function About({ artworks }) {
     <div className="bg-black min-h-screen min-w-screen overflow-hidden overflow-y-scroll flex items-center justify-center no-scrollbar">
       <StaticNavbar font={rockSalt} />
       <motion.div
-        className={`${rockSalt.className} flex flex-col items-center justify-center gap-12 pt-24 px-8 min-h-[92vh] w-[94vw] -translate-y-2 border-neutral-700 border-[1px] rounded-lg text-white`}
+        className={`${rockSalt.className} flex flex-col items-center justify-center gap-12 pt-24 px-8 min-h-[92vh] min-w-[350px] w-[94vw] -translate-y-2 border-neutral-700 border-[1px] rounded-lg text-white`}
       >
         <AboutHero />
-        <div>
+        <section className="flex flex-col items-start justify-start sm:flex-row gap-8 py-12 w-full min-w-[350px]">
           <AboutImage index={index} data={artworks} />
           <AboutBody font={inter} />
-        </div>
+        </section>
       </motion.div>
       <Footer />
     </div>
