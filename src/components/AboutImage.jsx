@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutImage(props) {
   return (
-    <div className="">
+    <div className="min-w-[15vw]">
       <Image
         key={props.data[props.index].title}
         src={props.data[props.index].image.url}
